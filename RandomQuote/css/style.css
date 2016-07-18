@@ -20,3 +20,14 @@
     margin: 8px 2px;
     cursor: pointer;
 }
+
+.mainHeader {
+    background: no-repeat center bottom scroll; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 150px;
+    padding-top: 2%;
+    font-size: 100%;
+}

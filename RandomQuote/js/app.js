@@ -13,7 +13,7 @@ function nextBackground() {
     current = current % backgrounds.length;
     header.css('background-image', backgrounds[current]);
 }
-setInterval(nextBackground, 2000);
+setInterval(nextBackground, 3000);
 
 header.css('background-image', backgrounds[0]);
 });

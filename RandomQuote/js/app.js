@@ -1,19 +1,27 @@
 $(document).ready(function(){
-var header = $('body');
 
-var backgrounds = new Array(
-    'url(img/mountain1.jpg)'
-  , 'url(img/mountain2.jpg)'
-);
+var webAddress = "http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?";
+document.getElementById("buttonid").addEventListener("click", function( event){
+  $.ajax({
+    url: webAddress,
+    dataType: "jsonp",
+    success: function(res) {
 
-var current = 0;
+      $("#message").text(res.quoteText);
+      
+      if (res.quoteAuthor) {
+        $("#author").text("- " + res.quoteAuthor);
+      } 
+      else
+        $("#author").text("- " + "Unknown");
+    },
+    error: function(xhr, status, error) {
+		$("#message").text("Error");
+		$("#author").text("Error");
+	}
+  });
+}, false);
 
-function nextBackground() {
-    current++;
-    current = current % backgrounds.length;
-    header.css('background-image', backgrounds[current]);
-}
-setInterval(nextBackground, 3000);
-
-header.css('background-image', backgrounds[0]);
 });
+
+

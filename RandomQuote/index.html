@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <div align="center" class="heading"><strong>Random Quotes Rewritten</strong></div>
-
+    
     <!--CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -18,8 +18,15 @@
     <script type='text/javascript' src='js/app.js'></script>
 </head>
 <body>
-<p align="center" class="desc"> These are some quotes taken from the forismatic API. I hope you enjoy them!</p>
-<div align="center"><span><button class="button">Get Quote</button></span></div>
-<header class="mainHeader"></header>
+    <div class="container-fluid" id="box">
+        <div class="container-fluid" id="messagebox">
+            <div id="message"></div>
+                <br>
+            <div class="text-right" id="author"></div>
+        </div>
+        <div align="right">
+        	<button id="buttonid" class="button">Get Quote</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,11 +1,16 @@
+
 .heading{
 	font-size: 400%;
 	font-style: italic;
 	font-family:"Times New Roman";
+	color: #00BFFF;
 }
-.desc{
-	font-family:"Times New Roman";
-	font-size: 200%;
+
+#box {
+  color: #F8F8F2;
+  background-color: #1EC3C3;
+  border-radius: 10px;
+  margin: 1% 5% 1% 5%;
 }
 
 .button {
@@ -24,13 +29,24 @@
     width: 200px;
 }
 
-.mainHeader {
-    background: no-repeat center bottom scroll; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 150px;
-    padding-top: 2%;
-    font-size: 100%;
+
+#author {
+  font-family: "Times New Roman";
+  font-size: 24px;
 }
+
+#messagebox {
+  color: #F8F8F2;
+  background-color: #1EC3C3;
+  padding: 10px 15px 10px 15px;
+  margin: 20px 0 0 0;
+  line-height: 4ex;
+  height: 24ex;  
+  width: auto;
+}
+
+#message {
+  font-family: "Times New Roman";
+  font-size: 24px;
+}
+

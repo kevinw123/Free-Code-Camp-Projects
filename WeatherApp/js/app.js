@@ -1,16 +1,20 @@
 var location;
 $(document).ready(function(){
   $.getJSON("http://ip-api.com/json", function(data){
-      location.latitude = getLatitude(data); //Math.floor(getLatitude(data)); 
-      location.longitude = getLongitude(data);//Math.floor(getLongitude(data));
-      /*var myData = JSON.parse(city.list);
-      console.log(myData);*/
+      location.latitude = getLatitude(data);
+      location.longitude = getLongitude(data);
+      location.regionName = getRegionName(data);
       var webAddress = "http://api.openweathermap.org/data/2.5/weather?lat="+location.latitude +"&lon=" + location.longitude + "&APPID=b20df3281dd211ad4c1254577573e180";
         $.getJSON(webAddress, function(data){
           console.log(data);
+          console.log(data.weather[0].description);
+          console.log(data.weather[0].main);
+          console.log(data.name);
+          console.log(data.main.temp);
         });
       console.log(location.latitude);
       console.log(location.longitude);
+      console.log(location.regionName);
   });
 
     function getLongitude(data){
@@ -19,4 +23,9 @@ $(document).ready(function(){
     function getLatitude(data){
       return data.lat;
     }
+    function getRegionName(data){
+      return data.regionName;
+    }
+
 });
+

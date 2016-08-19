@@ -1,0 +1,55 @@
+h1{
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-size: 36px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 0;
+	text-align: center;
+	color: #ff7b29;
+}
+
+#wrapper {
+  width:300px;
+  height: 100%;
+  clear:both;
+}
+#first {
+  background: red;
+  width:100px;
+  height: 100px;
+  float:left;
+   /*opacity: 0.1;*/
+}
+#second {
+  background:blue;
+  width:100px;
+  height: 100px;
+  float:left;
+  /*opacity: 0.1;*/
+}
+#third {
+	background:green;
+  width:100px;
+  height: 100px;
+  float:left;
+  /*opacity: 0.1;*/
+}
+
+/*#bg {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+
+  /* Preserve aspet ratio */
+  /*min-width: 100%;
+  max-height: 100%;
+}*/
+
+html { 
+  background: url(../img/cloudy.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -29,3 +29,8 @@ $(document).ready(function(){
 
 });
 
+/*$(function() {
+  h = $(window).height();
+  w = $(window).width();
+  $(html).style('background','url(..img/sunny.jpg&w='+w+'&h='+h);
+});*/

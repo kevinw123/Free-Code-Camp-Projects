@@ -73,3 +73,16 @@ html,body{
 	color: blue;
 	margin-right: 80px;
 }
+
+.container{
+	align-content: center;
+}
+
+#box2{
+  color: #F8F8F2;
+  background-color: #6CA4C8;
+  border-radius: 10px;
+  height: 250px;
+  width: 300px;
+  opacity: 1;
+}

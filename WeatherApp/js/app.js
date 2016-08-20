@@ -1,4 +1,7 @@
 var location;
+location.deg = "F";
+location.tempC = 0.0;
+location.tempF = 0.0;
 $(document).ready(function() {
     $.getJSON("http://ip-api.com/json", function(data) {
         location.latitude = getLatitude(data);
@@ -10,9 +13,10 @@ $(document).ready(function() {
         var webAddress = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + location.latitude + "&lon=" + location.longitude + "&cnt=4&APPID=b20df3281dd211ad4c1254577573e180";
         $.getJSON(webAddress, function(data) {
             console.log(data);
+            location.tempF = data.list[0].deg;
             $("#weather").text(data.list[0].weather[0].main);
-            $("#temperature").text(data.list[0].deg);
-            $("#degree").text('\u00B0' + "F");
+            $("#temperature").text(Math.floor(location.tempF));
+            $("#degree").text('\u00B0' + location.deg);
             $("#icon").attr("src", getIcon(data));
         });;
     });
@@ -65,8 +69,17 @@ $(document).ready(function() {
         }
     }
 
-    $( "#degree" ).click(function() {
-      console.log( "Handler for .click() called." );
-      console.log($("#temperature").attr());
+    $("#degree").click(function() {
+        console.log("Handler for .click() called.");
+
+        if (location.deg == "C") {
+            location.deg = "F";
+            location.tempC = Math.floor((location.tempF -32) * (5/9));
+            $("#temperature").text(location.tempC);
+        } else {
+            location.deg = "C";
+            $("#temperature").text(location.tempF);
+        }
+        $("#degree").text('\u00B0' + location.deg);
     });
 });

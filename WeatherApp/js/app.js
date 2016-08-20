@@ -16,6 +16,7 @@ $(document).ready(function() {
             console.log(data);
             for (var i = 0; i < 4; i++) {
                 location.tempF[i] = data.list[i].deg;
+                $("#date" + i).text(getDate(i));
                 $("#weather" + i).text(data.list[i].weather[0].main);
                 $("#temperature" + i).text(Math.floor(location.tempF[i]));
                 $("#degree" + i).text('\u00B0' + location.deg[i]);
@@ -23,6 +24,17 @@ $(document).ready(function() {
             }
         });;
     });
+
+    function getDate(index) {
+        var date = new Date();
+        var today = date.getDay();
+        var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursdays", "Friday", "Saturday"];
+        if (index == 0) {
+            return "Today";
+        } else {
+            return daysOfWeek[(today + index) % 7];
+        }
+    }
 
     function getLongitude(data) {
         return data.lon;

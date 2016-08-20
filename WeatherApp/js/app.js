@@ -11,7 +11,6 @@ $(document).ready(function() {
         $.getJSON(webAddress, function(data) {
             console.log(data);
             $("#weather").text(data.list[0].weather[0].main);
-            //$("#description").text(data.weather[0].description);
             $("#temperature").text(data.list[0].deg);
             $("#degree").text('\u00B0' + "F");
             $("#icon").attr("src", getIcon(data));
@@ -68,6 +67,6 @@ $(document).ready(function() {
 
     $( "#degree" ).click(function() {
       console.log( "Handler for .click() called." );
-      //console.log($("#temperature").text);
+      console.log($("#temperature").attr());
     });
 });

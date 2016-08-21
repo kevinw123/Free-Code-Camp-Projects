@@ -11,7 +11,7 @@
 
 #box {
   color: #F8F8F2;
-  background-color: #6CA4C8;
+  background-color: rgba(223, 234, 229, 0.5);
   border-radius: 10px;
   height: 200px;
   width: 300px;
@@ -97,19 +97,27 @@ html,body{
 	margin-right: 37%;
 }
 
+ html,body{ 
+   background: url(../img/sky.jpg) no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   background-color: #87CEFA;
+ }
+
 .container{
 	align-content: center;
 }
 
 #forecastBox{
   color: #F8F8F2;
-  background-color: #6CA4C8;
+  background: rgba(223, 234, 229, 0.5);
+  opacity: 1;
   height: 200px;
   max-width: 33%;
   min-width: 300px;
   border-radius: 10px;
-  opacity: 1;
   margin-left: 2px;
   margin-top: 4px;
-
 }

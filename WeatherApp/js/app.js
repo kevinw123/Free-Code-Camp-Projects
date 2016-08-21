@@ -11,7 +11,8 @@ $(document).ready(function() {
         location.city = getCity(data);
         $("#city").text(location.city);
         $("#region").text(location.regionName);
-        var webAddress = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + location.latitude + "&lon=" + location.longitude + "&cnt=4&APPID=b20df3281dd211ad4c1254577573e180";
+        var apiKey = "ENTER API KEY";
+        var webAddress = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + location.latitude + "&lon=" + location.longitude + "&cnt=4&APPID=" + apiKey;
         $.getJSON(webAddress, function(data) {
             console.log(data);
             for (var i = 0; i < 4; i++) {

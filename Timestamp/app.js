@@ -6,21 +6,21 @@ function validateUnixTimeStamp(dateString) {
 }
 
 function validateDate(dateString) {
-    return true;
+    return Date.parse(dateString) != NaN;
 }
 
 app.get('/:date', function (req, res) {
-    // res.send('Req: ' + req.param("date"));
     var dateString = req.param("date");
     var obj = { "unix": null, "date": null};
     if (!validateDate(dateString) || !validateUnixTimeStamp(dateString)) {
         res.send(JSON.stringify(obj));
     } else {
-        var obj = { "unix": 1, "date": 1};
+        obj.unix = new Date(dateString).getTime();
+        obj.date = dateString;
         res.send(JSON.stringify(obj));
     }
 });
 
 app.listen(3000, function () {
-    console.log('App listening on port 3000');
+    console.log('App is listening on port 3000');
 });
